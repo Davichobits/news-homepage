@@ -1,6 +1,7 @@
 ---
 import IconMenuClose from '../assets/images/icon-menu-close.svg';
 import IconMenu from '../assets/images/icon-menu.svg';
+import Logo from '../assets/images/logo.svg'
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'New', href: '/new' },
@@ -10,23 +11,26 @@ const navItems = [
 ];
 ---
 
-<nav class="bg-Soft-orange relative">
-  <div class="flex justify-end">
+<nav class=" h-[28px] mb-8">
+  <div class="flex justify-between items-center">
+    <Logo class="w-[44px] h-[28px]" />
     <IconMenu id="open-btn" class="cursor-pointer" />
   </div>
-  <div id="menu-modal" class="bg-Off-white w-64 h-screen absolute right-0 top-0 px-[21px] py-[27px]">
-    <div class="flex justify-end">
-      <IconMenuClose id="close-btn" class="cursor-pointer" />
+  <div id="menu-modal" class="hidden bg-black/50 absolute inset-0 h-[99vh]">
+    <div  class="bg-Off-white w-64 absolute h-[99vh] right-0 top-0 px-[21px] py-[27px] ">
+      <div class="flex justify-end">
+        <IconMenuClose id="close-btn" class="cursor-pointer" />
+      </div>
+      <ul class="flex flex-col gap-6 mt-[88px]">
+        {navItems.map(item => (
+          <li>
+            <a href={item.href} class="text-lg cursor-pointer hover:text-Soft-red">
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
-    <ul class="flex flex-col gap-6 mt-[88px]">
-      {navItems.map(item => (
-        <li>
-          <a href={item.href} class="text-lg cursor-pointer hover:text-Soft-red">
-            {item.name}
-          </a>
-        </li>
-      ))}
-    </ul>
   </div>
 </nav>
 

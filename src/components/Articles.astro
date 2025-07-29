@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import Image01 from '../assets/images/image-retro-pcs.jpg'
+import Image02 from '../assets/images/image-top-laptops.jpg'
+import Image03 from '../assets/images/image-gaming-growth.jpg'
+
+interface Article {
+  number: string;
+  title: string;
+  description: string;
+  url: ImageMetadata;
+}
+
+const articles: Article[] = [
+  {
+    number: '01',
+    title: 'Reviving Retro PCs',
+    description: 'What happens when old PCs are given modern upgrades?',
+    url: Image01,
+  },
+  {
+    number: '02',
+    title: 'Top 10 Laptops of 2022',
+    description: 'Our best picks for various needs and budgets.',
+    url: Image02,
+  },
+  {
+    number: '03',
+    title: 'The Growth of Gaming',
+    description: 'How the pandemic has sparked fresh opportunities.',
+    url: Image03,
+  },
+];
+---
+
+<section class="flex flex-col gap-8">
+  {
+    articles.map((article: Article) => (
+      <article class="flex gap-6">
+        <Image class="w-[100px]" src={article.url} alt={article.title} />
+        <div>
+          <p class="text-[32px] font-bold text-Soft-red">{article.number}</p>
+          <a href="#" class="font-extrabold text-lg cursor-pointer hover:text-Soft-red">{article.title}</a>
+          <p class="text-Dark-grayish-blue text-[15px]">{article.description}</p>
+        </div>
+      </article>
+    ))
+  }
+</section>

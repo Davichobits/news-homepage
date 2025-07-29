@@ -1,10 +1,14 @@
 ---
 import { Image } from 'astro:assets'
 import mobileImg from '../assets/images/image-web-3-mobile.jpg'
+import desktopImg from '../assets/images/image-web-3-desktop.jpg'
 ---
 
 <header class="flex flex-col gap-6 items-start">
-  <Image src={mobileImg} alt="image web 3 mobile"  />
+
+  <Image class="sm:hidden" src={mobileImg} alt="image web 3 mobile"  />
+  <Image class="hidden sm:block" src={desktopImg} alt="image web 3 mobile"  />
+  
   <h1 class="text-[40px]/10 font-extrabold">The Bright Future of Web 3.0?</h1>
   <p class="text-Dark-grayish-blue text-[15px]">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
   <button class="uppercase bg-Soft-red px-8 py-3 font-bold cursor-pointer hover:bg-Soft-red/90">Read more</button>

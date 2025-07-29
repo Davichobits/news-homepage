@@ -1,0 +1,32 @@
+---
+interface New {
+  title: string,
+  description: string
+}
+const articles: New[] = [
+  {
+    title: 'Hydrogen VS Electric Cars',
+    description: 'Will hydrogen-fueled cars ever catch up to EVs?',
+  },
+  {
+    title: 'The Downsides of AI Artistry',
+    description: 'What are the possible adverse effects of on-demand AI image generation?',
+  },
+  {
+    title: 'Is VC Funding Drying Up?',
+    description: 'Private funding by VC firms is down 50% YOY. We take a look at what that means.',
+  },
+];
+---
+
+<section class="bg-Very-dark-blue text-Off-white py-4 px-6">
+  <h1 class="text-Soft-orange font-bold text-[32px]">New</h1>
+  {
+    articles.map((article: New) => (
+      <article class="py-8 border-b last:border-none border-Grayish-blue">
+        <h2 class="font-extrabold text-xl mb-2 hover:text-Soft-orange">{article.title}</h2>
+        <p class="text-Grayish-blue text-[15px]">{article.description}</p>
+      </article>
+    ))
+  }
+</section>

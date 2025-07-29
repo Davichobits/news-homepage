@@ -1,4 +1,10 @@
 ---
+interface Props {
+  styles?: string
+}
+
+const {styles = ''} = Astro.props;
+
 interface New {
   title: string,
   description: string
@@ -19,12 +25,12 @@ const articles: New[] = [
 ];
 ---
 
-<section class="bg-Very-dark-blue text-Off-white py-4 px-6">
+<section class={`bg-Very-dark-blue text-Off-white py-4 px-6 ${styles}`}>
   <h1 class="text-Soft-orange font-bold text-[32px]">New</h1>
   {
     articles.map((article: New) => (
       <article class="py-8 border-b last:border-none border-Grayish-blue">
-        <h2 class="font-extrabold text-xl mb-2 hover:text-Soft-orange">{article.title}</h2>
+        <h2 class="font-extrabold text-xl mb-2 cursor-pointer hover:text-Soft-orange">{article.title}</h2>
         <p class="text-Grayish-blue text-[15px]">{article.description}</p>
       </article>
     ))

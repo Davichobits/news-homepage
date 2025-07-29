@@ -14,9 +14,20 @@ const navItems = [
 <nav class=" h-[28px] mb-8">
   <div class="flex justify-between items-center">
     <Logo class="w-[44px] h-[28px]" />
-    <IconMenu id="open-btn" class="cursor-pointer" />
+    <ul class="hidden xl:flex xl:gap-10">
+        {navItems.map(item => (
+          <li>
+            <a href={item.href} class="text-lg cursor-pointer hover:text-Soft-red">
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="xl:hidden">
+        <IconMenu id="open-btn" class="cursor-pointer" />
+      </div>
   </div>
-  <div id="menu-modal" class="hidden bg-black/50 fixed inset-0 h-screen">
+  <div id="menu-modal" class="hidden bg-black/50 fixed inset-0 h-screen xl:hidden">
     <div  class="bg-Off-white w-64 fixed h-screen right-0 top-0 px-[21px] py-[27px] ">
       <div class="flex justify-end">
         <IconMenuClose id="close-btn" class="cursor-pointer" />

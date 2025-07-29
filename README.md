@@ -1,36 +1,23 @@
-# Astro Starter Kit: Basics
+# News Homepage
 
-```sh
-npm create astro@latest -- --template basics
-```
+A responsive and modern homepage layout for a news blog website.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Demo](/demo.png)
 
-## 🚀 Project Structure
+## Features
 
-Inside of your Astro project, you'll see the following folders and files:
+Users are able to:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+- View the optimal layout depending on their device's screen size
+- See hover states for interactive elements
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Technologies used
 
-## 🧞 Commands
+- ASTRO
+- TYPESCRIPT
+- TAILWIND
 
-All commands are run from the root of the project, from a terminal:
+## Usefull commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -41,6 +28,15 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Author
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+David Ruiz - Frontend Developer
+- [Github](https://github.com/Davichobits)
+- [Frontend Mentor](https://www.frontendmentor.io/profile/Davichobits) 
+- [Linkedin](https://www.linkedin.com/in/davidirc/)
+- [YouTube](https://www.youtube.com/CodingTube)
+- [codingtube.dev](https://codingtube.dev/)
+
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=davichobits/davichobits@github)](https://gitads.dev/v1/ad-track?source=davichobits/davichobits@github)
+

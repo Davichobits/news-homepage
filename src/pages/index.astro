@@ -9,8 +9,10 @@ import "../styles/global.css";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout class="">
-	<Hero />
-	<New />
+<Layout>
+	<div class="flex flex-col gap-16 lg:flex-row mb-16 lg:gap-8 lg:mb-[55px]">
+		<Hero styles="lg:flex-2" />
+		<New styles="lg:flex-1" />
+	</div>
 	<Articles />
 </Layout>

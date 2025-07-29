@@ -12,11 +12,9 @@ import Navbar from '../components/Navbar.astro'
 		<title>News Homepage</title>
 	</head>
 	<body class="font-Inter flex justify-center">
-		<main class=" bg-Off-white py-[28px] px-4 relative"> <!-- w-[375px] -->
+		<main class=" bg-Off-white py-[28px] px-4 relative sm:px-20 xl:px-0 xl:py-[80px] xl:max-w-[1112px]"> <!-- w-[375px] -->
 			<Navbar />
-			<section class="flex flex-col gap-16">
-				<slot />
-			</>
+			<slot />
 		</main>
 	</body>
 </html>

@@ -1,0 +1,43 @@
+---
+import IconMenuClose from '../assets/images/icon-menu-close.svg';
+import IconMenu from '../assets/images/icon-menu.svg';
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'New', href: '/new' },
+  { name: 'Popular', href: '/popular' },
+  { name: 'Trending', href: '/trending' },
+  { name: 'Categories', href: '/categories' }
+];
+---
+
+<nav class="bg-Soft-orange relative">
+  <div class="flex justify-end">
+    <IconMenu id="open-btn" class="cursor-pointer" />
+  </div>
+  <div id="menu-modal" class="bg-Off-white w-64 h-screen absolute right-0 top-0 px-[21px] py-[27px]">
+    <div class="flex justify-end">
+      <IconMenuClose id="close-btn" class="cursor-pointer" />
+    </div>
+    <ul class="flex flex-col gap-6 mt-[88px]">
+      {navItems.map(item => (
+        <li>
+          <a href={item.href} class="text-lg cursor-pointer hover:text-Soft-red">
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const closeBtn = document.getElementById('close-btn') as HTMLImageElement;
+  const openBtn = document.getElementById('open-btn') as HTMLImageElement;
+  const modal = document.getElementById('menu-modal') as HTMLDivElement;
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+  });
+</script>

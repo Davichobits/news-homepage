@@ -1,8 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import "../styles/global.css";
+import { articles } from '../common/articles';
+import NewCard from '../components/new/NewCard.astro';
+import type { New } from '../common/types';
 ---
 
-<Layout>
-	<h1>New</h1>
+<Layout title='New'>
+	<div class="xl:grid xl:grid-cols-2 gap-6">
+		{
+				articles.map((article: New) => (
+					<NewCard {...article} />
+				))
+			}
+	</div>
 </Layout>

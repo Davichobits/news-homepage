@@ -1,0 +1,23 @@
+---
+import type { New } from '../../common/types';
+
+interface Props extends New {
+  drawLastLine?: boolean
+}
+
+const { title, url, description, drawLastLine=true } = Astro.props;
+---
+
+<article class:list={[
+  `py-8 border-b border-Grayish-blue`,
+  {
+    'last:border-none': !drawLastLine
+  }
+  ]}>
+  <a
+    href={`/new/${url}`}
+    class='font-extrabold text-xl mb-2 cursor-pointer hover:text-Soft-orange'
+    >{title}</a
+  >
+  <p class='text-Grayish-blue text-[15px]'>{description}</p>
+</article>

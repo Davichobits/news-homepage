@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from '../../layouts/Layout.astro'
+import type { New } from '../../common/types';
+import { articles } from '../../common/articles';
+
+export const getStaticPaths = (() => {
+  return articles.map(article => ({params: {slug:`${article.url}`}}));
+}) satisfies GetStaticPaths;
+
+const {slug} = Astro.params;
+const currentArticle: New = articles.filter((article: New) => article.url === slug)[0]
+---
+
+<Layout title={currentArticle.title}>
+  <a class="hover:text-Soft-red mb-6 block" href="/">Atrás</a>
+  <h1 class="font-bold text-2xl mb-6">{currentArticle.title}</h1>
+  <p class="text-Dark-grayish-blue mb-6 italic">{currentArticle.description}</p>
+  <p>{currentArticle.content}</p>
+</Layout>

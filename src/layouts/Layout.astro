@@ -1,5 +1,12 @@
 ---
 import Navbar from '../components/Navbar.astro'
+import "../styles/global.css";
+
+interface Props {
+	title: string
+}
+
+const {title} = Astro.props;
 ---
 
 <!doctype html>
@@ -9,7 +16,7 @@ import Navbar from '../components/Navbar.astro'
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>News Homepage</title>
+		<title>{title}</title>
 	</head>
 	<body class="font-Inter flex justify-center">
 		<main class=" bg-Off-white py-[28px] px-4 relative sm:px-20 xl:px-0 xl:py-[80px] xl:max-w-[1112px]"> <!-- w-[375px] -->

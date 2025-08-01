@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import Navbar from '../components/Navbar.astro'
 import "../styles/global.css";
 
@@ -17,9 +18,10 @@ const {title} = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ClientRouter />
 	</head>
-	<body class="font-Inter flex justify-center">
-		<main class=" bg-Off-white py-[28px] px-4 relative sm:px-20 xl:px-0 xl:py-[80px] xl:max-w-[1112px]"> <!-- w-[375px] -->
+	<body class="font-Inter flex justify-center bg-Off-white">
+		<main class="py-[28px] px-4 relative sm:px-20 xl:px-0 xl:py-[80px] xl:w-[1112px]"> <!-- w-[375px] -->
 			<Navbar />
 			<slot />
 		</main>

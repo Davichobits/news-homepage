@@ -1,45 +1,60 @@
 ---
 import IconMenuClose from '../assets/images/icon-menu-close.svg';
 import IconMenu from '../assets/images/icon-menu.svg';
-import Logo from '../assets/images/logo.svg'
+import Logo from '../assets/images/logo.svg';
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'New', href: '/new' },
   { name: 'Popular', href: '/popular' },
   { name: 'Trending', href: '/trending' },
-  { name: 'Categories', href: '/categories' }
+  { name: 'Categories', href: '/categories' },
 ];
 ---
 
-<nav class=" h-[28px] mb-8">
-  <div class="flex justify-between items-center">
-    <Logo class="w-[44px] h-[28px]" />
-    <ul class="hidden xl:flex xl:gap-10">
-        {navItems.map(item => (
+<nav class='h-[28px] mb-8'>
+  <div class='flex justify-between items-center'>
+    <Logo class='w-[44px] h-[28px]' />
+    <ul class='hidden xl:flex xl:gap-10'>
+      {
+        navItems.map((item) => (
           <li>
-            <a href={item.href} class="text-lg cursor-pointer hover:text-Soft-red">
+            <a
+              href={item.href}
+              class='text-lg cursor-pointer hover:text-Soft-red'
+            >
               {item.name}
             </a>
           </li>
-        ))}
-      </ul>
-      <div class="xl:hidden">
-        <IconMenu id="open-btn" class="cursor-pointer" />
-      </div>
+        ))
+      }
+    </ul>
+    <div class='xl:hidden'>
+      <IconMenu id='open-btn' class='cursor-pointer' />
+    </div>
   </div>
-  <div id="menu-modal" class="hidden bg-black/50 fixed inset-0 h-screen xl:hidden">
-    <div  class="bg-Off-white w-64 fixed h-screen right-0 top-0 px-[21px] py-[27px] ">
-      <div class="flex justify-end">
-        <IconMenuClose id="close-btn" class="cursor-pointer" />
+  <div
+    id='menu-modal'
+    class='hidden bg-black/50 fixed inset-0 h-screen xl:hidden'
+  >
+    <div
+      class='bg-Off-white w-64 fixed h-screen right-0 top-0 px-[21px] py-[27px]'
+    >
+      <div class='flex justify-end'>
+        <IconMenuClose id='close-btn' class='cursor-pointer' />
       </div>
-      <ul class="flex flex-col gap-6 mt-[88px]">
-        {navItems.map(item => (
-          <li>
-            <a href={item.href} class="text-lg cursor-pointer hover:text-Soft-red">
-              {item.name}
-            </a>
-          </li>
-        ))}
+      <ul class='flex flex-col gap-6 mt-[88px]'>
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class='text-lg cursor-pointer hover:text-Soft-red'
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>

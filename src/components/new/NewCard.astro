@@ -16,6 +16,7 @@ const { title, url, description, drawLastLine=true } = Astro.props;
   ]}>
   <a
     href={`/new/${url}`}
+    transition:name={title}
     class='font-extrabold text-xl mb-2 cursor-pointer hover:text-Soft-orange'
     >{title}</a
   >

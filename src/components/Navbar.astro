@@ -9,6 +9,8 @@ const navItems = [
   { name: 'Trending', href: '/trending' },
   { name: 'Categories', href: '/categories' },
 ];
+const currentPath = Astro.url.pathname;
+
 ---
 
 <nav class='h-[28px] mb-8'>
@@ -16,16 +18,18 @@ const navItems = [
     <Logo class='w-[44px] h-[28px]' />
     <ul class='hidden xl:flex xl:gap-10'>
       {
-        navItems.map((item) => (
-          <li>
+        navItems.map((item) => {
+          const isActive = currentPath === item.href;
+          return (<li>
             <a
               href={item.href}
-              class='text-lg cursor-pointer hover:text-Soft-red'
+              class={`text-lg cursor-pointer hover:text-Soft-red ${isActive && 'text-Soft-red'}`}
             >
               {item.name}
             </a>
-          </li>
-        ))
+          </li>)
+        }
+        )
       }
     </ul>
     <div class='xl:hidden'>

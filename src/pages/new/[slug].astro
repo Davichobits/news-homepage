@@ -1,28 +1,41 @@
 ---
-import type { GetStaticPaths } from "astro";
-import Layout from '../../layouts/Layout.astro'
+import type { GetStaticPaths } from 'astro';
+import Layout from '../../layouts/Layout.astro';
 import type { New } from '../../common/types';
 import { articles } from '../../common/articles';
 
 export const getStaticPaths = (() => {
-  return articles.map(article => ({params: {slug:`${article.url}`}}));
+  return articles.map((article) => ({ params: { slug: `${article.url}` } }));
 }) satisfies GetStaticPaths;
 
-const {slug} = Astro.params;
-const currentArticle: New = articles.filter((article: New) => article.url === slug)[0]
+const { slug } = Astro.params;
+const currentArticle: New = articles.filter(
+  (article: New) => article.url === slug
+)[0];
 ---
 
 <Layout title={currentArticle.title}>
-  <h1 transition:name={currentArticle.title} class="font-bold text-2xl mb-6">{currentArticle.title}</h1>
-  <p class="text-Dark-grayish-blue mb-6 italic">{currentArticle.description}</p>
+  <h1 transition:name={currentArticle.title} class='font-bold text-2xl mb-6'>
+    {currentArticle.title}
+  </h1>
+  <p class='text-Dark-grayish-blue mb-6 italic'>{currentArticle.description}</p>
   <p>{currentArticle.content}</p>
-  <div class="flex justify-end mt-6">
-    <a id="go-back" class="hover:text-Soft-red mb-6 block cursor-pointer" >Atrás</a>
+  <div class='flex justify-end mt-6'>
+    <a
+      href='/new'
+      id='go-back'
+      class='hover:text-Soft-red mb-6 block cursor-pointer'>Atrás</a
+    >
   </div>
 </Layout>
 
 <script>
-  document.getElementById('go-back')?.addEventListener('click', () => {
-    window.history.back();
+  document.addEventListener('astro:page-load', () => {
+    const backBtn = document.querySelector('#go-back');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        history.back();
+      });
+    }
   });
 </script>

@@ -15,7 +15,9 @@ const currentPath = Astro.url.pathname;
 
 <nav class='h-[28px] mb-8'>
   <div class='flex justify-between items-center'>
-    <Logo class='w-[44px] h-[28px]' />
+    <a href="/">
+      <Logo class='w-[44px] h-[28px]' />
+    </a>
     <ul class='hidden xl:flex xl:gap-10'>
       {
         navItems.map((item) => {

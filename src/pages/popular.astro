@@ -1,10 +1,25 @@
 ---
+import Image from 'astro/components/Image.astro';
 import Layout from '../layouts/Layout.astro'
 import "../styles/global.css";
+import {fetchNews} from '../services/NewsService'
+import type {APINews} from '../core/interfaces/INewsProvider' 
+const news = await fetchNews()
 ---
 
 <Layout title='Popular'>
 	<div class="p-10">
-		<p class="text-center text-2xl font-bold text-Soft-red">Work in progress...</p>
+		{
+			news.map((news: APINews) => (
+				<article class="flex gap-6">
+        <Image width={229} height={220} class="" src={news.url} alt={news.title} />
+        <div>
+          <a href="#" class="font-extrabold text-lg cursor-pointer hover:text-Soft-red">{news.title}</a>
+          <p class="text-Dark-grayish-blue text-[15px]">{news.content}</p>
+        </div>
+      </article>
+			))
+		}
+		
 	</div>
 </Layout>

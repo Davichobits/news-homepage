@@ -1,5 +1,5 @@
-import type { INewsProvider } from '../core/interfaces/INewsProvider';
-import { NewsAPIProvider, FakeNewsProvider } from '../infrastructure/providers';
+import type { INewsProvider } from '@src/core/interfaces/INewsProvider';
+import { NewsAPIProvider, FakeNewsProvider } from '@src/infrastructure/providers';
 
 const provider: INewsProvider = new FakeNewsProvider();
 
